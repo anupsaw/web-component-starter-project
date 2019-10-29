@@ -1,0 +1,32 @@
+{
+  "name": "webcomponents",
+  "version": "1.0.0",
+  "description": "web components with typescript and webpack",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "start": "webpack-dev-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anupsaw/webcomponents.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anupsaw/webcomponents/issues"
+  },
+  "homepage": "https://github.com/anupsaw/webcomponents#readme",
+  "devDependencies": {
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "ts-loader": "^6.2.1",
+    "typescript": "^3.6.4",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.9",
+    "webpack-dev-server": "^3.9.0"
+  },
+  "dependencies": {
+    "rxjs": "^6.5.3"
+  }
+}
