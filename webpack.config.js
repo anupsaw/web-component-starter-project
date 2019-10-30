@@ -1,4 +1,5 @@
 const htmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPartialsPlugin = require('html-webpack-partials-plugin')
 const path = require('path');
 
 
