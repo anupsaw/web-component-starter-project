@@ -28,6 +28,7 @@
     "webpack-dev-server": "^3.9.0"
   },
   "dependencies": {
+    "@webcomponents/webcomponentsjs": "^2.3.0",
     "rxjs": "^6.5.3"
   }
 }
