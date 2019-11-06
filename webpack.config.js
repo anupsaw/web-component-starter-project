@@ -5,7 +5,7 @@ const path = require('path');
 
 module.exports = {
     entry: './src/index.ts',
-    mode:'production',
+    mode: 'production',
     module: {
         rules: [
             {
@@ -21,6 +21,10 @@ module.exports = {
                         options: { minimize: true }
                     }
                 ]
+            },
+            {
+                test: /\.s[ac]ss$/i,
+                use: ['style-loader', 'css-loader',  'sass-loader'],
             },
         ]
     },

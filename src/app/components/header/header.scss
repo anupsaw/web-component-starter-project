@@ -1,0 +1,7 @@
+@import '../../../scss/color';
+
+sz-header {
+    display: flex;
+    height: 80px;
+    background-color: map-get($cyan, 500);
+}

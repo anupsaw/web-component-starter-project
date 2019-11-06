@@ -21,14 +21,19 @@
     "html-loader": "^0.5.5",
     "html-webpack-partials-plugin": "^0.5.3",
     "html-webpack-plugin": "^3.2.0",
+    "node-sass": "^4.13.0",
+    "sass-loader": "^8.0.0",
     "ts-loader": "^6.2.1",
     "typescript": "^3.6.4",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.9",
-    "webpack-dev-server": "^3.9.0"
+    "webpack-dev-server": "^3.9.0",
+    "scss-bundle": "^3.0.1",
+    "style-loader": "^1.0.0"
   },
   "dependencies": {
     "@webcomponents/webcomponentsjs": "^2.3.0",
+    "css-loader": "^3.2.0",
     "rxjs": "^6.5.3"
   }
 }

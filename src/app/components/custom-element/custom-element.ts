@@ -1,6 +1,7 @@
 import { fromEvent } from 'rxjs';
 import { SzBaseElement } from '../../../lib/base-element';
 import template from './custom-element.html';
+import './custom-element.scss';
 export class CustomElement extends SzBaseElement {
 
     constructor() {

@@ -1,0 +1,9 @@
+@import '../../../scss/color';
+
+sz-header-backdrop {
+    position: absolute;
+    height: 200px;
+    background-color: #EEEEEE;
+    width: 100%;
+    z-index: -1;
+}
