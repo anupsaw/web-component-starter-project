@@ -1,9 +1,14 @@
 @import '../../../scss/color';
 
 sz-header-backdrop {
-    position: absolute;
+    // position: absolute;
     height: 200px;
     background-color: #EEEEEE;
     width: 100%;
-    z-index: -1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    justify-content: center;
+    text-align: center;
 }

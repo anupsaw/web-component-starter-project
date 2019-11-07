@@ -1,7 +1,23 @@
 @import '../../../scss/color';
+@import '../../../scss/common';
 
 sz-header {
     display: flex;
     height: 80px;
-    background-color: map-get($cyan, 500);
+    background-color: map-get($light-theme, regular);
+
+    header {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 0 auto;
+        font-family: serif;
+        background: transparent;
+        //     box-shadow: 0 1px 4px map-get($light-theme, shade);
+
+        h1::first-letter {
+            font-size: 40px;
+        }
+    }
 }

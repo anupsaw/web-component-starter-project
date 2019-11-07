@@ -1,0 +1,13 @@
+@import './color';
+
+body {
+    color: map-get($light-theme, text);
+}
+
+.sz-button {
+    padding: 10px;
+    border: 1px solid map-get($light-theme, regular);
+    background: transparent;
+    color: map-get($light-theme, regular);
+    cursor: pointer;
+}
