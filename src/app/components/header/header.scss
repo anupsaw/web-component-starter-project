@@ -9,8 +9,6 @@ sz-header {
     header {
         width: 80%;
         display: flex;
-        flex-direction: column;
-        justify-content: center;
         margin: 0 auto;
         font-family: serif;
         background: transparent;
@@ -18,6 +16,11 @@ sz-header {
 
         h1::first-letter {
             font-size: 40px;
+        }
+
+        .sz-action-nav {
+            display: flex;
+            align-items: center;
         }
     }
 }
