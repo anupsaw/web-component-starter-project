@@ -1,0 +1,36 @@
+
+var mock_data_1 = { name: 'Tes12' }
+var mock_data_2 = { name: 'Test2' }
+var mock_data_3 = { name: 'Test3' }
+var mock_data_4 = { name: 'Test4' }
+var mock_data_5 = { name: 'Test5' }
+var mock_data_6 = { name: 'Test6' }
+var mock_data_7 = { name: 'Test7' }
+var mock_data_8 = { name: 'Test8' }
+var mock_data_9 = { name: 'Test9' }
+var mock_data_10 = { name: 'Test10' }
+
+
+var data = {
+    mock_data_1: mock_data_1,
+    mock_data_2: mock_data_2,
+    mock_data_3: mock_data_3,
+    mock_data_4: mock_data_4,
+    mock_data_5: mock_data_5,
+    mock_data_6: mock_data_6,
+    mock_data_7: mock_data_7,
+    mock_data_8: mock_data_8,
+    mock_data_9: mock_data_9,
+    mock_data_10: mock_data_10,
+}
+
+
+function getDataSet() {
+
+    // Random number between 1 to 10
+
+    var num = Math.floor(Math.random() * 10);
+    var key = 'mock_data_' + num;
+    return data[key];
+
+}

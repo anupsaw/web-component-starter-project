@@ -1,0 +1,18 @@
+.sz-popup-backdrop {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #0000004d;
+    left: 0;
+    top: 0;
+}
+
+.sz-popup-main {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #FFF;
+    padding: 20px;
+    border-radius: 5px;
+}

@@ -7,6 +7,7 @@ import { SzFooter } from './app/components/footer/footer';
 import { SzHeaderBackdrop } from './app/components/backdrop/backdrop';
 import { SzMain } from './app/components/main/main';
 import { SzLogo } from './app/components/logo/logo';
+import { SzPopup } from './app/components/popup/popup';
 
 
 customElements.define('custom-element', CustomElement);
@@ -17,5 +18,6 @@ customElements.define('sz-header-backdrop', SzHeaderBackdrop);
 
 customElements.define('sz-main', SzMain);
 customElements.define('sz-logo', SzLogo);
+customElements.define('sz-popup', SzPopup);
 console.log('Webpack 123');
 

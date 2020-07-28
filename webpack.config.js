@@ -6,6 +6,8 @@ const path = require('path');
 module.exports = {
     entry: './src/index.ts',
     mode: 'production',
+    watch: true,
+    devtool: 'source-map',
     module: {
         rules: [
             {
@@ -24,7 +26,7 @@ module.exports = {
             },
             {
                 test: /\.s[ac]ss$/i,
-                use: ['style-loader', 'css-loader',  'sass-loader'],
+                use: ['style-loader', 'css-loader', 'sass-loader'],
             },
         ]
     },

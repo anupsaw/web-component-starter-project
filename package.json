@@ -6,7 +6,8 @@
   "scripts": {
     "build": "webpack",
     "run": "webpack-dev-server",
-    "start":"node server.js"
+    "start":"node server.js",
+    "setup:hooks":"git config core.hooksPath ./tools/git-hooks"
   },
   "repository": {
     "type": "git",
