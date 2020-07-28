@@ -2,12 +2,13 @@
 
 # TODO: need to add logic to add counter specific to user
 
-PATH="tools/git-hooks/aks-commit.couter"
 ORG_MSG=$(cat $1)
-ORG_COUNT=$(cat $PATH)
+ORG_COUNT=$(cat tools/git-hooks/aks-commit.couter)
 
 CURR_COUNT=$((ORG_COUNT + 1))
-echo $CURR_COUNT >$PATH
+echo $CURR_COUNT >tools/git-hooks/aks-commit.couter
+
+git add tools/git-hooks/aks-commit.couter
 
 while ((${#CURR_COUNT} < 6)); do
     CURR_COUNT="0$CURR_COUNT"
