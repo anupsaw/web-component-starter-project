@@ -5,6 +5,7 @@ export class SzBaseElement extends HTMLElement {
 
     constructor(template?: string) {
         super();
+        console.log(template);
         if (template) {
             this.loadTemplate(template);
         }

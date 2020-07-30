@@ -2,11 +2,23 @@
     "compilerOptions": {
         "outDir": "./dist/",
         "noImplicitAny": true,
+        "baseUrl": "./",
         "sourceMap": true,
         "module": "esnext",
         "moduleResolution": "node",
         "importHelpers": true,
         "target": "es2015",
-        "allowJs": true
+        "allowJs": true,
+        "paths": {
+            "@sahaz/web-ui/core": [
+                "./lib/core"
+            ],
+            "@sahaz/web-ui/components": [
+                "./lib/components"
+            ],
+            "@sahaz/web-ui/icons": [
+                "./lib/icons"
+            ]
+        }
     }
 }

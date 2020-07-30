@@ -1,0 +1,7 @@
+@mixin sz-desktop($min-width: 769px, $max-width: max) {
+
+    @media screen and (min-width:$min-width) {
+        @content;
+    }
+
+}

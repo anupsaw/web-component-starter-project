@@ -3,11 +3,11 @@ import { SzPopup } from './popup';
 export class SzPopupManger {
 
     public open(component?: any): SzPopup {
-        let container: HTMLElement = document.querySelector('.sz-popup-main-container');
+        let container: HTMLElement = document.querySelector('.sz-dialog-container');
 
         if (!container) {
             container = document.createElement('div');
-            container.classList.add('sz-popup-main-container');
+            container.classList.add('sz-dialog-container');
             document.body.appendChild(container);
         }
         const popup = this.addPopup(container);

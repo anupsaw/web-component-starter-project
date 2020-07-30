@@ -1,4 +1,4 @@
-import { SzBaseElement } from '../../../lib/base-element';
+import { SzBaseElement } from '@sahaz/web-ui/core';
 import './main.scss';
 export class SzMain extends SzBaseElement {
 

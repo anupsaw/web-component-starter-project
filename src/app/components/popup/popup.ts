@@ -1,5 +1,4 @@
-import { fromEvent } from 'rxjs';
-import { SzBaseElement } from '../../../lib/base-element';
+import { SzBaseElement } from '@sahaz/web-ui/core';
 import template from './popup.html';
 import './popup.scss';
 export class SzPopup extends SzBaseElement {

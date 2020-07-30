@@ -1,0 +1,131 @@
+@import './color';
+
+@mixin sz-core {
+
+
+    body {
+        color: map-get($light-theme, text);
+    }
+
+    .sz-button-icon {
+        padding: 10px;
+        border: 1px solid map-get($light-theme, regular);
+        background: transparent;
+        color: map-get($light-theme, regular);
+        cursor: pointer;
+        margin: 0 2px;
+
+        &:hover,
+        &:active,
+        &:focus {
+            border-color: map-get($light-theme, dark);
+            color: map-get($light-theme, dark);
+        }
+
+        &:focus {
+            outline-color: map-get($light-theme, dark);
+        }
+    }
+
+    .sz-button {
+        padding: 10px;
+        border: 1px solid map-get($light-theme, regular);
+        background: transparent;
+        color: map-get($light-theme, regular);
+        cursor: pointer;
+        margin: 0 2px;
+
+        &:hover,
+        &:active,
+        &:focus {
+            border-color: map-get($light-theme, dark);
+            color: map-get($light-theme, dark);
+        }
+
+        &:focus {
+            outline-color: map-get($light-theme, dark);
+        }
+    }
+
+
+    .sz-button-solid {
+        padding: 10px;
+        border: 1px solid map-get($light-theme, regular);
+        background: map-get($light-theme, regular);
+        color: map-get($light-theme, text);
+        cursor: pointer;
+        margin: 0 2px;
+
+        &:hover,
+        &:active,
+        &:focus {
+            border-color: map-get($light-theme, dark);
+        }
+
+        &:focus {
+            outline-color: map-get($light-theme, dark);
+        }
+    }
+
+    .sz-button-clear {
+        padding: 10px;
+        border: 1px solid map-get($light-theme, regular);
+        background: transparent;
+        color: map-get($light-theme, regular);
+        cursor: pointer;
+        margin: 0 2px;
+
+        &:hover,
+        &:active,
+        &:focus {
+            border-color: map-get($light-theme, dark);
+            color: map-get($light-theme, dark);
+        }
+
+        &:focus {
+            outline-color: map-get($light-theme, dark);
+        }
+    }
+
+    .sz-link {
+        background: transparent;
+        border: 1px solid transparent;
+        cursor: pointer;
+        color: #000;
+        padding: 10px;
+        display: flex;
+        margin: 0 2px;
+
+        &:hover {
+            border-color: #000;
+        }
+
+        &:focus {
+            border-color: #000;
+            outline-color: #000;
+        }
+    }
+
+    .sz-spacer {
+        flex: 1 0 auto;
+    }
+
+    .sz-input-wrapper {
+        margin: 0px 10px;
+    }
+
+    input[type="text"] {
+        padding: 8px;
+    }
+
+    .sz-flex {
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    .sz-base-icon{
+        height: inherit;
+        width: inherit;
+    }
+}
