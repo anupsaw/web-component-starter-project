@@ -1,2 +1,10 @@
 @import '../lib/styles';
+
+p {
+    padding: 0;
+    margin: 0;
+}
+
+
+
 @include sz-core();

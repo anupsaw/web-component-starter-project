@@ -1,4 +1,5 @@
 import '@sahaz/web-ui/icons';
+import { SzCheckbox } from '@sahaz/web-ui/components';
 import { CustomElement } from './custom-element/custom-element';
 import { SzCustomForm } from './custom-form/custom-form';
 import { SzHeader } from './header/header';
@@ -8,6 +9,8 @@ import { SzMain } from './main/main';
 import { SzLogo } from './logo/logo';
 import { SzPopup } from './popup/popup';
 import { SzDemoOptions } from './options/options';
+import { SzListComponent } from './list/component';
+SzCheckbox.register();
 
 customElements.define('custom-element', CustomElement);
 customElements.define('custom-form', SzCustomForm);
@@ -19,3 +22,4 @@ customElements.define('sz-main', SzMain);
 customElements.define('sz-logo', SzLogo);
 customElements.define('sz-popup', SzPopup);
 customElements.define('sz-options', SzDemoOptions);
+customElements.define('sz-list', SzListComponent);

@@ -1,0 +1,16 @@
+sz-list {
+    display: flex;
+    border: .3px solid gray;
+    align-items: center;
+
+    .sz-list-text {
+        display: flex;
+        flex: 1 0 70%;
+        padding: 15px;
+    }
+
+    .sz-list-checkbox {
+        display: flex;
+        flex: 1 0 auto;
+    }
+}
