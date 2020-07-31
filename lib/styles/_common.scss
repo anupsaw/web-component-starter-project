@@ -121,7 +121,11 @@
     .sz-flex {
         display: flex;
         flex-direction: column;
+    }
 
+    .sz-flex-row {
+        display: flex;
+        flex-direction: row;
     }
 
     .sz-base-icon {
