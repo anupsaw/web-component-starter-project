@@ -45,16 +45,27 @@ sz-options {
     flex-direction: column;
     width: 100%;
     margin-bottom: 40px;
-    .sz-options-url-input{
-        height: 30px;
+    align-items: center;
+
+    .sz-options-url-input {
+        height: 50px;
         font-size: large;
+        width: 100%;
+        box-sizing: border-box;
     }
-    .sz-options-btn{
+
+    .sz-options-btn {
         width: 100%;
     }
 }
 
-.sz-options-url-list {
+.sz-options-just-added-list {
+    sz-list {
+        margin: 5px 0;
+    }
+}
+
+.sz-options-prev-added {
     display: flex;
     flex-direction: column;
     box-sizing: border-box;

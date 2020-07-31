@@ -3,7 +3,7 @@
             id='close'>
         <sz-icon-close></sz-icon-close>
     </button>
-    <h2>Popup Blocker</h2>
+    <h1>Popup Blocker</h1>
 </sz-header-backdrop>
 <div class="sz-main-body">
     <div class='sz-options-input-section'>
@@ -20,6 +20,16 @@
         </div>
 
     </div>
-    <div class="sz-options-url-list">
+    <div class='sz-options-just-added sz-flex'>
+        <h2 id='justAdd'>Just Added</h2>
+        <div class="sz-options-just-added-list"></div>
+    </div>
+    <div class="sz-options-prev-added">
+        <div class='sz-flex-row sz-flex-center'>
+            <a class='sz-anchor-link sz-show-all' onclick="addUrl()"> Show All</a>
+            <a class='sz-anchor-link sz-hide-all'> Hide All</a>
+        </div>
+        <h2 id='prevAdd'>Previously Added</h2>
+        <div class="sz-options-url-list"></div>
     </div>
 </div>
