@@ -4,7 +4,8 @@
   "description": "web components with typescript and webpack",
   "main": "index.js",
   "scripts": {
-    "build": "webpack",
+    "build": "webpack --config webpack.config.prod.js",
+    "build:local": "webpack",
     "run": "webpack-dev-server",
     "start": "node server.js",
     "setup:hooks": "git config core.hooksPath ./tools/git-hooks"
