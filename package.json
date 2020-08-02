@@ -4,6 +4,7 @@
   "description": "web components with typescript and webpack",
   "main": "index.js",
   "scripts": {
+    "build:prod": "webpack --config webpack.config.prod.js",
     "build": "webpack --config webpack.config.prod.js",
     "build:local": "webpack",
     "run": "webpack-dev-server",

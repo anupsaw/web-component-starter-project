@@ -9,10 +9,9 @@ import { SzDemoOptions } from '../options/options';
 import { SzHeader } from '../header/header';
 export class SzCustomForm extends SzBaseElement {
 
-
     constructor() {
         super(template);
-        ((this.children as any).formPrint as HTMLElement).addEventListener('click', (event: Event) => {
+        this.elementRef.formPrint.addEventListener('click', (event: Event) => {
             this.querySelectorAll('input').forEach((item: any) => {
                 fromEvent(item, 'keyup').subscribe((event: Event) => { console.log((event.target as any).value) })
             });
@@ -22,15 +21,12 @@ export class SzCustomForm extends SzBaseElement {
     }
 
     init(): void {
-        console.log(this.elementRef.popupBtn);
         (this.elementRef.popupBtn as HTMLButtonElement).addEventListener('click', () => {
-            console.log('clicked');
             const popupManger = new SzPopupManger();
             popupManger.open(SzCustomForm);
         });
 
         (this.elementRef.sliderBtn as HTMLButtonElement).addEventListener('click', () => {
-            console.log('clicked');
             const popupManger = new SzSliderManger();
             const config = SzSliderConfig.create();
             config.maxWidth = '400px';

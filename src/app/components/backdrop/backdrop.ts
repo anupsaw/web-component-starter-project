@@ -4,6 +4,5 @@ export class SzHeaderBackdrop extends SzBaseElement {
 
     constructor() {
         super();
-        console.log('Backdrop', this.elementRef);
     }
 }

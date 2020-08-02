@@ -1,6 +1,6 @@
 <sz-header-backdrop>
     <button class='sz-demo-icon-close'
-            id='close'>
+            click='close'>
         <sz-icon-close></sz-icon-close>
     </button>
     <h1>Popup Blocker</h1>
@@ -14,22 +14,29 @@
 
         <div class='sz-options-input-button-group sz-flex-row'>
             <button class='sz-button-solid sz-options-btn'
-                    id='optionsAdd'>ADD</button>
-            <button class='sz-button sz-options-btn'
-                    id='optionsClear'>CLEAR</button>
+                    click="addUrl">ADD</button>
+            <button class='sz-button sz-options-btn'>CLEAR</button>
         </div>
 
     </div>
-    <div class='sz-options-just-added sz-flex'>
-        <h2 id='justAdd'>Just Added</h2>
-        <div class="sz-options-just-added-list"></div>
+    <div if="showJustAdded" class='sz-options-just-added sz-flex'>
+        <h2>Just Added</h2>
+        <div class="sz-options-just-added-list"
+             ref="justAdded"></div>
     </div>
-    <div class="sz-options-prev-added">
-        <div class='sz-flex-row sz-flex-center'>
-            <a class='sz-anchor-link sz-show-all' onclick="addUrl()"> Show All</a>
-            <a class='sz-anchor-link sz-hide-all'> Hide All</a>
-        </div>
-        <h2 id='prevAdd'>Previously Added</h2>
-        <div class="sz-options-url-list"></div>
+    <div class='sz-flex-row sz-flex-center'>
+        <a class='sz-anchor-link'
+           click='showAll'
+           if='!showPrevAdded'> Show All</a>
+        <a class='sz-anchor-link'
+           click='hideAll'
+           if='showPrevAdded'> Hide All</a>
+    </div>
+    <div class="sz-options-prev-added"
+         if='showPrevAdded'>
+
+        <h2>Previously Added</h2>
+        <div class="sz-options-url-list"
+             ref="prevList"></div>
     </div>
 </div>

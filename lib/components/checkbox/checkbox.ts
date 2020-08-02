@@ -1,4 +1,4 @@
-import { SzBaseInputElement, SzBaseElement } from 'lib';
+import { SzBaseElement } from 'lib';
 import html from './checkbox.html';
 import './checkbox.scss';
 
