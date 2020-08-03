@@ -48,24 +48,49 @@ export class SzBaseElement extends HTMLElement {
                 get: () => { return (this as any)[`_${name}`]; },
                 set: (value: any) => {
                     (this as any)[`_${name}`] = value;
-                    this.updateDom();
+                    // this.updateDom();
+                    this.updateCurrentDom(this.commentMap.get(name), value);
                 },
             })
             this.seCommentElement(name, item);
         });
     }
 
-    protected updateDom(): void {
+    /** @deprecated */
+    protected updateDomOld(): void {
         this.commentMap.forEach((val: SzComment[], key: string) => {
             key = key.replace(/([A-Za-z0-9]+)/g, 'this.$1');
             console.log(key);
+            //TODO: need to change eval to Function
             const value = eval(key);
+            console.log(value);
             if (value) {
                 val.forEach((item) => item.comment.replaceWith(item.dom))
             } else {
                 val.forEach((item) => item.dom.replaceWith(item.comment))
             }
         });
+    }
+
+    protected updateDom(): void {
+        this.commentMap.forEach((val: SzComment[], key: string) => {
+            key = key.replace(/([\[\]\-_a-z0-9A-Z\.]+)/g, 'this.$1')
+            const fun = new Function(`return ${key}`);
+            const evalVal = (() => fun())();
+            if (evalVal) {
+                val.forEach((item) => item.comment.replaceWith(item.dom))
+            } else {
+                val.forEach((item) => item.dom.replaceWith(item.comment))
+            }
+        });
+    }
+
+    protected updateCurrentDom(val: SzComment[], ifDom?: boolean): void {
+        if (ifDom) {
+            val.forEach((item) => item.comment.replaceWith(item.dom))
+        } else {
+            val.forEach((item) => item.dom.replaceWith(item.comment))
+        }
     }
 
     /** This method set the element to the value assigned to the ref attribute  */
