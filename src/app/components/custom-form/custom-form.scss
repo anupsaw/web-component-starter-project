@@ -7,3 +7,19 @@ custom-form {
     flex-direction: column;
     width: 100%;
 }
+
+.sz-demo-icon-capture {
+    display: flex;
+    align-self: flex-end;
+    justify-self: flex-start;
+    position: fixed;
+    top: 10px;
+    height: 30px;
+    width: 30px;
+    right: 10px;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}

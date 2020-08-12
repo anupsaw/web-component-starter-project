@@ -6,6 +6,8 @@ export class SzBaseElement extends HTMLElement {
     public elementRef: { [key: string]: HTMLElement };
     private commentMap = new Map<string, SzComment[]>();
 
+    public onDisconnect: () => void;
+
     constructor(template?: string, mode?: 'open' | 'closed') {
         super();
         if (template) {
@@ -16,15 +18,20 @@ export class SzBaseElement extends HTMLElement {
         }
     }
 
-    private loadTemplate(temp: string, mode: 'open' | 'closed' | 'none'): void {
+    private loadTemplate(temp: string, mode: 'open' | 'closed'): void {
         if (mode) {
             const template = document.createElement('template') as HTMLTemplateElement;
             template.innerHTML = temp;
-            this.attachShadow({ mode: 'open' });
+            this.attachShadow({ mode });
             this.shadowRoot.appendChild(template.content.cloneNode(true));
         } else {
             this.innerHTML = temp;
         }
+    }
+
+    public connectedCallback(): void {
+        console.log('connectedCallback');
+        //   this.updateDom();
     }
 
     /** this method include all the inline action added in the template */
@@ -41,18 +48,28 @@ export class SzBaseElement extends HTMLElement {
 
     }
 
+    public disconnectedCallback(): void {
+        console.log('called');
+        this.onDisconnect && this.onDisconnect();
+    }
+
+
     private initNodeIfStatus(): void {
+        const regPattern = new RegExp(/([\[\]\-_a-z0-9A-Z\.]+)/g);
         this.querySelectorAll(`[if]`).forEach((item: HTMLElement) => {
-            const name = item.getAttribute('if');
+            const val = item.getAttribute('if');;
+            const name = val && val.match(regPattern)[0];
+            console.log(name, val);
             !Object.hasOwnProperty.call(this, name) && Object.defineProperty(this, name, {
                 get: () => { return (this as any)[`_${name}`]; },
                 set: (value: any) => {
+                    console.log('set', name, value);
                     (this as any)[`_${name}`] = value;
-                    // this.updateDom();
-                    this.updateCurrentDom(this.commentMap.get(name), value);
+                    this.updateDom();
+                    // this.updateCurrentDom(this.commentMap.get(name), value);
                 },
-            })
-            this.seCommentElement(name, item);
+            });
+            this.seCommentElement(val, item);
         });
     }
 
@@ -73,10 +90,13 @@ export class SzBaseElement extends HTMLElement {
     }
 
     protected updateDom(): void {
+        console.dir(this);
         this.commentMap.forEach((val: SzComment[], key: string) => {
             key = key.replace(/([\[\]\-_a-z0-9A-Z\.]+)/g, 'this.$1')
+
             const fun = new Function(`return ${key}`);
-            const evalVal = (() => fun())();
+            const evalVal = (() => fun.call(this))();
+            console.log(key, evalVal);
             if (evalVal) {
                 val.forEach((item) => item.comment.replaceWith(item.dom))
             } else {
@@ -108,7 +128,7 @@ export class SzBaseElement extends HTMLElement {
     private seCommentElement(key: string, ele: HTMLElement): void {
         let comment = this.commentMap.get(key);
         comment = comment || [];
-        comment.push()
+        //  comment.push()
 
         if (this.commentMap.has(key)) {
             comment = this.commentMap.get(key);

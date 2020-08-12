@@ -1,0 +1,51 @@
+sz-popover {
+
+    font-size: 10px;
+    position: absolute;
+    // top: 40px;
+    // left: 40px;
+    // box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px;
+    min-width: 100px;
+    background-color: #FFF;
+    display: flex;
+    box-shadow: gray 1px 1px 5px 1px;
+
+    .sz-arrow {
+        width: 15px;
+        height: 15px;
+        background: #FFF;
+        transform: rotate(45deg);
+        position: absolute;
+        top: -7.5px;
+        box-shadow: grey -1px -1px 1px -1px;
+    }
+
+    // &::after {
+    //     width: 0;
+    //     height: 0;
+    //     box-sizing: border-box;
+    //     border-left: 10px solid transparent;
+    //     border-right: 10px solid transparent;
+    //     border-bottom: 10px solid white;
+    //     position: absolute;
+    //     top: -10px;
+    //     box-shadow: gray 1px 1px 5px 1px;
+    //     content: ''
+    // }
+
+    // &::before {
+    //     width: 0;
+    //     height: 0;
+    //     box-sizing: border-box;
+    //     border-left: 10px solid transparent;
+    //     border-right: 10px solid transparent;
+    //     border-bottom: 10px solid white;
+    //     position: absolute;
+    //     top: -10px;
+    //     content: ''
+    // }
+}

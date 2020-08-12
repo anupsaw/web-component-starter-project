@@ -1,25 +1,47 @@
 <form id="customForm"
       class="sz-flex">
-       <input type="text"
-              id=name
-              placeholder="Enter Name"
-              required />
+        <input type="text"
+               id=name
+               placeholder="Enter Name"
+               required />
 
-       <input type="text"
-              id=city
-              placeholder="Enter City"
-              required />
+        <input type="text"
+               id=city
+               placeholder="Enter City"
+               required />
 
-       <input type="text"
-              id=age
-              placeholder="Enter Age"
-              required />
+        <input type="text"
+               id=age
+               placeholder="Enter Age"
+               required />
 </form>
 
 <button ref="formPrint">Print Form Value</button>
 
 <button ref="popupBtn"
+        szPopover='display pop up'
         class="sz-button-solid">Show Pop up</button>
 
 <button ref="sliderBtn"
         class="sz-button-solid">Show Slider</button>
+
+<button ref="sliderBtn"
+        click='pause'
+        class="sz-button-clear">
+        <sz-icon-play></sz-icon-play>
+</button>
+
+<button ref="sliderBtn"
+        click='resume'
+        class="sz-button-solid">Resume</button>
+
+<!-- <button ref="screenCapture"
+        click='initCapture'
+        class="sz-button-solid">Capture Screen</button> -->
+
+<!-- <button class='sz-demo-icon-capture'
+        if='isCaptureMode'
+        szPopover='Take Screen shot'
+        click='initCapture'>
+        <sz-icon-camera></sz-icon-camera>
+</button> -->

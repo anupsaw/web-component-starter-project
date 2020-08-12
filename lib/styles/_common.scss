@@ -87,6 +87,19 @@
         }
     }
 
+    .sz-button-icon {
+        display: flex;
+        align-self: flex-end;
+        justify-self: flex-start;
+        height: 30px;
+        width: 30px;
+        align-items: center;
+        justify-content: center;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+    }
+
     .sz-link {
         background: transparent;
         border: 1px solid transparent;

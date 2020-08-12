@@ -8,3 +8,14 @@ p {
 
 
 @include sz-core();
+
+canvas {
+    position: fixed;
+    // width: 400px;
+    // height: 400px;
+    top: 0;
+    left: 0;
+    z-index: 999999;
+    box-sizing: border-box;
+    border: 1px solid black;
+}

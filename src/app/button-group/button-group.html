@@ -1,0 +1,23 @@
+<div class='sz-puppeteer-action-button-group'
+     if='!isCaptureMode'>
+    <button class='sz-button-icon'
+            if='!isPaused'
+            szPopover='Take Screen shot'
+            click='initCapture'>
+        <sz-icon-camera></sz-icon-camera>
+    </button>
+
+    <button class='sz-button-icon'
+            if='!isPaused'
+            szPopover='Resume the Process'
+            click='resume'>
+        <sz-icon-play></sz-icon-play>
+    </button>
+
+    <button class='sz-button-icon'
+            if='isPaused'
+            szPopover='Pause the Process'
+            click='pause'>
+        <sz-icon-pause></sz-icon-pause>
+    </button>
+</div>

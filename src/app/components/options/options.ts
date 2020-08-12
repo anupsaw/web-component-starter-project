@@ -8,6 +8,7 @@ export class SzDemoOptions extends SzBaseElement {
     private justAdded: string[] = [];
     public showPrevAdded = false;
     public showJustAdded = false;
+    public test = 'Test Text';
 
     constructor() {
         super(template);

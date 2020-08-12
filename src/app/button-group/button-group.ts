@@ -1,33 +1,15 @@
-import { SzBaseElement, SzCustomElement } from '@sahaz/web-ui/core';
-import { fromEvent } from 'rxjs';
+import { SzBaseElement } from 'lib';
 
-import template from './custom-form.html';
-import { SzPopupManger } from '../popup/service';
-import './custom-form.scss';
-import { SzSliderManger, SzSliderConfig } from '@sahaz/web-ui/components';
-import { SzDemoOptions } from '../options/options';
-import { SzHeader } from '../header/header';
-export class SzCustomForm extends SzBaseElement {
+import template from './button-group.html';
+import './button-group.scss';
+export class PuppeteerButtonActions extends SzBaseElement {
 
-    public isCaptureMode: boolean = true;
+    public isCaptureMode = false;
+    public isPaused = true;
+    public isResume = false;
     constructor() {
         super(template);
-        this.init();
-    }
-
-    init(): void {
-        (this.elementRef.popupBtn as HTMLButtonElement).addEventListener('click', () => {
-            const popupManger = new SzPopupManger();
-            popupManger.open(SzCustomForm);
-        });
-
-        (this.elementRef.sliderBtn as HTMLButtonElement).addEventListener('click', () => {
-            const popupManger = new SzSliderManger();
-            const config = SzSliderConfig.create();
-            config.maxWidth = '400px';
-            const slider = popupManger.open(SzCustomElement.get('sz-options'), config);
-            slider.elementInstance.close = () => slider.close();
-        });
+        this.updateDom();
     }
 
     public drawable(canvas: HTMLCanvasElement): void {
@@ -78,7 +60,8 @@ export class SzCustomForm extends SzBaseElement {
 
             console.log(clipBoundary);
             context.clearRect(0, 0, canvas.width, canvas.height);
-            status && status(clipBoundary);
+            const win = window as any;
+            win.onPuppeteerScreenshot && win.onPuppeteerScreenshot(clipBoundary);
             x = 0;
             y = 0;
             this.disableCapture(canvas);
@@ -88,25 +71,28 @@ export class SzCustomForm extends SzBaseElement {
     }
 
     public initCapture(): void {
-
         const canvas = document.createElement('canvas');
         document.body.appendChild(canvas);
         this.drawable(canvas);
-        this.isCaptureMode = false;
+        this.isCaptureMode = true;
     }
 
     public disableCapture(canvas: HTMLCanvasElement): void {
         canvas.remove();
-        setTimeout(() => this.isCaptureMode = true, 1000);
+        setTimeout(() => this.isCaptureMode = false, 1000);
     }
 
     public pause(): void {
+        this.isPaused = false;
         const win = window as any;
-        win.onPause && win.onPause();
+        win.onPause && win.onPuppeteerPauseExecution();
     }
 
     public resume(): void {
+        this.isPaused = true;
         const win = window as any;
-        win.onResume && win.onResume();
+        win.onResume && win.onPuppeteerResumeExecution();
     }
 }
+
+customElements.define('sz-puppeteer-action-button', PuppeteerButtonActions);
